@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Faktura.Models.Racun>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Fakture</h2>
+
+<p>
+    @Html.ActionLink("Izradi novu fakturu", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Izradio korisnik
+        </th>
+
+        <th>
+            Datum izrade
+        </th>
+        <th>
+            Datum dospijeća
+        </th>
+        <th>
+            Ukupna cijena bez poreza
+        </th>
+        <th>
+            Ukupna cijena s porezom
+        </th>
+        <th>
+            Naziv primatelja računa
+        </th>
+        <th></th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ModifiedBy)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DateNow.Day).@Html.DisplayFor(modelItem => item.DateNow.Month).@Html.DisplayFor(modelItem => item.DateNow.Year).
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DatumDospijeca.Day).@Html.DisplayFor(modelItem => item.DatumDospijeca.Month).@Html.DisplayFor(modelItem => item.DatumDospijeca.Year).
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.UkupnaCijenaBezPoreza) kn
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.UkupnaCijenaSPorezom) kn
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NazivPrimateljaRacuna)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem=>item.stavke)
+    </td>
+    <td>
+        @Html.ActionLink("Uredi ", "Edit", new { id = item.BrojFakture })|
+        @Html.ActionLink(" Detalji ", "Details", new { id = item.BrojFakture })|
+        @Html.ActionLink(" Izbriši ", "Delete", new { id = item.BrojFakture })
+    </td>
+</tr>
+}
+
+</table>

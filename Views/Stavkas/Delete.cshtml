@@ -1,0 +1,64 @@
+﻿@model Faktura.Models.Stavka
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Stavka</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OpisProdaneStavke)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OpisProdaneStavke)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KolicinaProdaneStavke)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KolicinaProdaneStavke)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CijenaStavkeBezPoreza)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CijenaStavkeBezPoreza)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UkupnaCijenaStavkaBezPoreza)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UkupnaCijenaStavkaBezPoreza)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RacunId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RacunId)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

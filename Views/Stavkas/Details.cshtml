@@ -1,0 +1,58 @@
+﻿@model Faktura.Models.Stavka
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Stavka</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OpisProdaneStavke)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OpisProdaneStavke)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KolicinaProdaneStavke)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KolicinaProdaneStavke)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CijenaStavkeBezPoreza)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CijenaStavkeBezPoreza)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UkupnaCijenaStavkaBezPoreza)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UkupnaCijenaStavkaBezPoreza)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RacunId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RacunId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdStavka }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

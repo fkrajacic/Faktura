@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Faktura.Models.Stavka>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OpisProdaneStavke)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KolicinaProdaneStavke)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CijenaStavkeBezPoreza)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UkupnaCijenaStavkaBezPoreza)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RacunId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OpisProdaneStavke)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KolicinaProdaneStavke)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CijenaStavkeBezPoreza)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UkupnaCijenaStavkaBezPoreza)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RacunId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdStavka }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdStavka }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdStavka })
+        </td>
+    </tr>
+}
+
+</table>
